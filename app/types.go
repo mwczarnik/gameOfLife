@@ -1,8 +1,8 @@
-package main
+package app
 
 type Position struct {
-	X int
-	Y int
+	Col int
+	Row int
 }
 
 type Cell struct {
@@ -15,14 +15,14 @@ func newCell(state bool, p Position) Cell {
 	c := Cell{State: state, Position: p}
 
 	// set cell neighbours positions
-	c.Neighbours.Top = Position{X: p.X, Y: p.Y - 1}
-	c.Neighbours.TopLeft = Position{X: p.X - 1, Y: p.Y - 1}
-	c.Neighbours.TopRight = Position{X: p.X + 1, Y: p.Y - 1}
-	c.Neighbours.Bottom = Position{X: p.X, Y: p.Y + 1}
-	c.Neighbours.BottomLeft = Position{X: p.X + -1, Y: p.Y + 1}
-	c.Neighbours.BottomRight = Position{X: p.X + 1, Y: p.Y + 1}
-	c.Neighbours.Left = Position{X: p.X - 1, Y: p.Y}
-	c.Neighbours.Right = Position{X: p.X + 1, Y: p.Y}
+	c.Neighbours.Top = Position{Col: p.Col, Row: p.Row - 1}
+	c.Neighbours.TopLeft = Position{Col: p.Col - 1, Row: p.Row - 1}
+	c.Neighbours.TopRight = Position{Col: p.Col + 1, Row: p.Row - 1}
+	c.Neighbours.Bottom = Position{Col: p.Col, Row: p.Row + 1}
+	c.Neighbours.BottomLeft = Position{Col: p.Col + -1, Row: p.Row + 1}
+	c.Neighbours.BottomRight = Position{Col: p.Col + 1, Row: p.Row + 1}
+	c.Neighbours.Left = Position{Col: p.Col - 1, Row: p.Row}
+	c.Neighbours.Right = Position{Col: p.Col + 1, Row: p.Row}
 	return c
 }
 
